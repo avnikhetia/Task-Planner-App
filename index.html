@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Planner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+        }
+        .task-container {
+            margin-top: 20px;
+        }
+        .task-item {
+            background-color: #fff;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .task-item.completed {
+            background-color: #d4edda;
+        }
+        button {
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+        .delete-btn {
+            background-color: #f44336;
+            color: white;
+            border: none;
+        }
+        .start-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        .complete-btn {
+            background-color: #2196F3;
+            color: white;
+            border: none;
+        }
+        .task-category {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+        .task-time-slot {
+            margin: 20px 0;
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #date-navigation {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .navigation-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>MY PLANNER</h1>
+    <div id="current-time-date"></div>
+    <div id="current-date-header"></div>
+
+    <!-- Date Navigation -->
+    <div id="date-navigation">
+        <button id="previous-day" class="navigation-btn">Previous Day</button>
+        <button id="next-day" class="navigation-btn">Next Day</button>
+    </div>
+    
+    <!-- Date Picker -->
+    <label for="date-picker">Choose Date:</label>
+    <input type="date" id="date-picker"/>
+    
+    <!-- Task Input Form -->
+    <div>
+        <input type="text" id="task-input" placeholder="Enter task description" />
+        <input type="number" id="task-duration" placeholder="Enter duration in minutes" />
+        <input type="time" id="task-time" />
+        <button id="add-task-btn">Add Task</button>
+    </div>
+
+    <!-- Categories for tasks -->
+    <div class="task-category">
+        <h2>Today's Tasks by Time</h2>
+        <div id="time-slot-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
